@@ -51,7 +51,7 @@ class LinkedList:
             return self.head
         
         current = self.head
-        while index > 0:
+        while current and index > 0:
             current = current.next_node
             index -= 1
         
