@@ -172,6 +172,9 @@ class LinkedList:
         return current
 
     def node_at_index(self, index):
+        """
+        Returns the node at the matching index
+        """
         if index == 0:
             return self.head
         else:
