@@ -688,7 +688,7 @@ These examples illustrate how different algorithmic approaches can exchange spac
 
 ## Two-Dimensional Array
 
-- In computing, row-major order and column-major order are methods of storing multi-dimensional array in linear storage.
+In computing, row-major order and column-major order are methods for storing a multidimensional array in linear storage.
     
     ```c
     int disp[2][4] = {
@@ -705,5 +705,16 @@ These examples illustrate how different algorithmic approaches can exchange spac
 ## 3-Dimensional Array or N-Dimensional Array
 
 - Element address formula:
-    
-    ![image.png](Arrays%2020948323e5c280d9a1c9d245845e8604/image.png)
+  ```
+    N-Dimensional array
+    A(([L₁] --- [U₁]), ([L₂] --- [U₂]), ([L₃] --- [U₃]), ([L₄] --- [U₄]) -------- ([Lₙ] --- [Uₙ]))
+
+    Location of A [i, j, k, ----, x] =
+        B + (i - L₁)(U₂ - L₂ + 1)(U₃ - L₃ + 1)(U₄ - L₄ + 1) ---- (Uₙ - Lₙ + 1)
+        + (j - L₂)(U₃ - L₃ + 1)(U₄ - L₄ + 1) ---- (Uₙ - Lₙ + 1)
+        + (k - L₃)(U₄ - L₄ + 1) ---- (Uₙ - Lₙ + 1)
+        +
+        +
+        +
+        + (x - Lₙ)
+  ```
