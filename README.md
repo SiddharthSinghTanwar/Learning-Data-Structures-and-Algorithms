@@ -3,9 +3,9 @@
 <!--
 [![Repo Size](https://img.shields.io/github/repo-size/siddharthtanwar/learning-data-structures)](https://github.com/siddharthtanwar/learning-data-structures)
 [![Stars](https://img.shields.io/github/stars/siddharthtanwar/learning-data-structures?style=social)](https://github.com/siddharthtanwar/learning-data-structures/stargazers)
--->
-[![Last Commit](https://img.shields.io/github/last-commit/siddharthtanwar/learning-data-structures)](https://github.com/SiddharthSinghTanwar/Learning-Data-Structures-and-Algorithms/commits/main)
 [![Languages](https://img.shields.io/github/languages/top/siddharthtanwar/learning-data-structures)](https://github.com/SiddharthSinghTanwar/Learning-Data-Structures-and-Algorithms)
+[![Last Commit](https://img.shields.io/github/last-commit/siddharthtanwar/learning-data-structures)](https://github.com/SiddharthSinghTanwar/Learning-Data-Structures-and-Algorithms/commits/main)
+-->
 
 
 ![Focus: Conceptual Mastery](https://img.shields.io/badge/Focus-Conceptual%20Mastery-success)
