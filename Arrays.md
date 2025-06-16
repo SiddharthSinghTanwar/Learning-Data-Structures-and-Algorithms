@@ -88,6 +88,13 @@ These implementations generally follow a strategy of **doubling their capacity**
     - The new element is then added.
 2. **Why doubling?** Doubling the capacity ensures that even though individual resize operations are O(N), the **amortized time complexity** for insertions at the end remains O(1).
 - **Python Lists:** Python lists typically over-allocate, meaning they reserve more memory than immediately needed. When the list runs out of space, it usually **doubles its capacity**. This strategy helps in amortizing the cost of insertions.
+    -  🧠 But… Python Lists Aren’t Always the Best for Everything
+      
+    Python’s list:
+  
+    - Backed by a resizable C array under the hood.
+    - Fast for append() and pop() at the end — amortized O(1).
+    - But slow for inserting/deleting from the front or middle — O(n) due to shifting.     
 - **Java ArrayLists:** Java `ArrayList` also uses a similar strategy. When an `add` operation causes the `ArrayList` to exceed its current capacity, a new, larger array (typically 1.5× the current size, but can vary) is allocated, and elements are copied.
 - **C++ `std::vector`:** `std::vector` also grows dynamically. While the exact growth factor is implementation-defined, it's very common for it to be a doubling strategy. When `push_back` or `insert` operations would exceed the current capacity, `std::vector` allocates a new, larger contiguous block of memory, copies existing elements, and then adds the new element. You can also manually reserve capacity using `reserve()`.
 
