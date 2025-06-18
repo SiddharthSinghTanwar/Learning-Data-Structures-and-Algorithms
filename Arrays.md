@@ -94,7 +94,9 @@ These implementations generally follow a strategy of **doubling their capacity**
   
     - Backed by a resizable C array under the hood.
     - Fast for append() and pop() at the end — amortized O(1).
-    - But slow for inserting/deleting from the front or middle — O(n) due to shifting.     
+    - But slow for inserting/deleting from the front or middle — O(n) due to shifting.
+
+    You can see the runtime of other list operations [here](https://wiki.python.org/moin/TimeComplexity).
 - **Java ArrayLists:** Java `ArrayList` also uses a similar strategy. When an `add` operation causes the `ArrayList` to exceed its current capacity, a new, larger array (typically 1.5× the current size, but can vary) is allocated, and elements are copied.
 - **C++ `std::vector`:** `std::vector` also grows dynamically. While the exact growth factor is implementation-defined, it's very common for it to be a doubling strategy. When `push_back` or `insert` operations would exceed the current capacity, `std::vector` allocates a new, larger contiguous block of memory, copies existing elements, and then adds the new element. You can also manually reserve capacity using `reserve()`.
 
