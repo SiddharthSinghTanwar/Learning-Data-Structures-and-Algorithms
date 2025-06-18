@@ -1,5 +1,7 @@
 # Linked Lists
 
+It is a list that still has order but no indices. It's characterized by its links. Each element has some notion of where the next element to it is, but no idea how long the list is or where it is in the list. (Kind of like a dark secret organization of Moriarty).
+
 ## 🔹 Time Complexities (Traditional Implementations)
 
 | **Operation** | **Array** | **Singly Linked List** | **Doubly Linked List** |
