@@ -20,7 +20,7 @@
 - **Doubly Linked List**:
     - O(n) for data + O(n) for `next` + O(n) for `prev` pointers.
 
-So, yes, the **space complexity isn't as critical**, but **doubly linked lists use more memory** due to the extra pointer.
+The **space complexity isn't as critical**, but **doubly linked lists use more memory** due to the extra pointer.
 
 ## Implementation
 
@@ -361,8 +361,21 @@ It’s the go-to when you need a real double-ended queue (like in BFS, sliding w
 ### Reversing a Linked List
 
 - Recursive
+  
+    🧠 Core Idea:
+
+    Reversing a list recursively uses a two-step logic:
+
+    1.  Go to the end (traverse):
+
+     -   This is the recursive descent.
+
+    2.  Reverse the links as we come back (unwind):
+
+     -  This is where the actual reversal happens.
+  
     
-    ```python
+    ```
     def reverseList(head):    
     		if not head:        
     				return None        
@@ -378,7 +391,7 @@ It’s the go-to when you need a real double-ended queue (like in BFS, sliding w
     
 - Iterative
     
-    ```python
+    ```
     def reverseList(head):
         if not head:
                 return         
