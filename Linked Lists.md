@@ -374,19 +374,18 @@ It’s the go-to when you need a real double-ended queue (like in BFS, sliding w
 
      -  This is where the actual reversal happens.
   
-    
     ```
     def reverseList(head):    
-    		if not head:        
-    				return None        
-    		
-    		newHead = head    
-    		if head.next:        
-    				newHead = reverseList(head.next)        
-    				head.next.next = head            
-    				
-    		head.next = None    
-    		return newHead
+        if not head:        
+                return None        
+        
+        newHead = head    
+        if head.next:        
+                newHead = reverseList(head.next)        
+                head.next.next = head            
+                
+        head.next = None    
+        return newHead
     ```
     
 - Iterative
