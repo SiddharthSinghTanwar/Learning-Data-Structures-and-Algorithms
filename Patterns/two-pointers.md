@@ -49,3 +49,48 @@ Look for the following clues in problem statements:
 - **Efficiency:** Reduces time complexity, often from O(N^2) (brute-force nested loops) to O(N) (linear scan).
 - **Space Optimization:** Many two-pointer solutions are O(1) space complexity, as they don't require auxiliary data structures beyond a few pointers.
 - **Simplicity (once understood):** The logic can be very elegant and concise.
+
+### Other Closely Related Patterns to Two Pointers:
+
+1. **Meet-in-the-Middle (Often involves two pointers):**
+        - **Idea:** Divide the input (e.g., an array) into two halves, solve a sub-problem for each half independently, and then combine the results by processing the two halves.
+        - **Relationship:** Often, the "combining" step involves using two pointers, one on each sorted result list from the halves, to find pairs that satisfy a condition (similar to Two Sum II).
+        - **Example:** Finding a subset sum equal to a target in an array where N is small enough (e.g., N≤40). You generate all 2N/2 subset sums for each half, sort them, and then use two pointers to find if a pair from the two sorted lists sums to the target.
+2. **Binary Search (Can be viewed as a specialized Two Pointers):**
+        - **Idea:** Efficiently find an element or a specific value in a *sorted* data structure by repeatedly dividing the search interval in half.
+        - **Relationship:** Binary search intrinsically uses two pointers (`low` and `high`) to define the search space. They move inwards (`low = mid + 1` or `high = mid - 1`) until `low > high`. While it's not typically categorized *as* a "Two Pointer pattern" in the same way as the others (it's its own distinct pattern), it fundamentally relies on two indices to manage its search space.
+3. **Hashing (Often used in conjunction with these patterns):**
+        - **Idea:** Using hash tables (dictionaries, hash maps, sets) for O(1) average-time lookups, insertions, and deletions.
+        - **Relationship:**
+            - **Sliding Window:** As you've seen, hash maps are crucial for tracking frequencies or distinct elements within a sliding window.
+            - **Prefix Sum:** For problems like "Subarray Sum Equals K" (with potentially negative numbers), a hash map is used to store `(prefix_sum: count)` pairs to efficiently find if a required `(current_sum - K)` prefix sum has occurred previously.
+            - **Two Pointers (General):** While not inherent to the two-pointer *movement*, hash maps can sometimes complement two-pointer solutions (e.g., for general "Two Sum" on an unsorted array, you can use a hash map to store seen numbers and their indices).
+4. **Monotonic Stack/Queue (Can optimize some Sliding Window/Two Pointer variations):**
+        - **Idea:** A stack or queue that maintains elements in a strictly increasing or decreasing order.
+        - **Relationship:** Can be used to optimize problems like "Sliding Window Maximum" (finding the max element in every window) where a simple hash map wouldn't work, and a standard sliding window might be O(N⋅K). A deque (double-ended queue) can be used to maintain a monotonic sequence of indices for O(N) solution.
+5. **Sweep Line over Ranges (Avoiding Redundant Work)**
+        
+    ✅ **When to Use:**
+    
+    - When an operation or condition affects a **range of indices**, not just a single one.
+    - You need to avoid **rechecking** or **revisiting** overlapping ranges (like k-distance windows).
+    
+    ---
+    
+    💡 **Core Idea:**
+    
+    Instead of checking every index in the entire array for every special event (like `nums[j] == key`), we:
+    
+    1. **Calculate the affected range** for each such event.
+    2. **Track the furthest point covered so far** (using a variable like `r`).
+    3. Only process **new indices not already handled**.
+    
+    ---
+    
+    🔁 **Common Operations:**
+    
+    - Use `max(r, start)` to skip already covered part.
+    - Use `min(n - 1, end)` to stay within bounds.
+    - Extend coverage with `r = end + 1`.
+    
+In essence, these patterns are like tools in a toolkit. Two Pointers is a foundational tool for iterating with two indices. Sliding Window is a specific type of two-pointer tool for contiguous segments. Prefix Sum is a pre-processing tool that often makes queries (which might then be used with two pointers or sliding windows) much faster. And hashing is a versatile utility that frequently combines with all of them to handle frequency, distinctness, or quick lookups
