@@ -3,6 +3,7 @@ The Prefix Sum technique is a fundamental concept in DSA used for efficient quer
 ### **Key Idea:**
 
 If you need to find the sum of elements from index `i` to `j` (inclusive) in the original array `arr`, you can simply calculate `prefix_sum[j] - prefix_sum[i-1]`. If `i` is 0, the sum is `prefix_sum[j]`.
+Or you can add `0` at the start of the prefix sum array to handle all the edge cases and calculate the sum of elements by `prefix_sum[j+1]—prefix_sum[I]`.
 
 ### **Construction of Prefix Sum Array:**
 
